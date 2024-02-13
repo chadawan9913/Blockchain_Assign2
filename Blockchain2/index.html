@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>Blockchain ETH</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container mx-auto">
+      <div class="flex justify-between items-center py-4 bg-red-800">
+        <div class="flex-shrink-0 ml-10 cursor-pointer">
+          <i class="fa-solid fa-book fa-2x text-white mx-3"></i>
+          <span class="text-white font-semibold "
+            >Movies Store ร้านขายภาพยนตร์และซีรีย์</span
+          >
+        </div>
+        <ul class="hidden md:flex overflow-x-hidden mr-10 font-semibold">
+          <li class="mr-6 p-1">
+            <a href="#" class="text-white hover:text-blue-300">Movie</a>
+          </li>
+          <li class="mr-6 p-1">
+            <a href="#" class="text-white hover:text-blue-300">Series</a>
+          </li>
+          <li class="mr-6 p-1">
+            <a href="#" class="text-white hover:text-blue-300">About</a>
+          </li>
+          <li class="mr-6 p-1">
+            <a href="#" class="text-white hover:text-blue-300">Contract</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="w-full p-4 bg-black">
+      <div
+        class="w-72 mx-auto pt-2 border-b-2 border-red-500 text-center text-2xl text-white font-semibold"
+      >
+        ภาพยนตร์ยอดฮิตปี 2024
+      </div>
+      <div class="pt-5 text-center text-white font-family:'Courier New' font-size:10px">
+        บอกลาตัวเลือกการรับชมที่จำกัด และพบกับความบันเทิงไร้ขีดจำกัดด้วยการขายภาพยนตร์ออนไลน์ของเรา ไม่ว่าคุณจะอยู่ที่บ้าน 
+        ระหว่างเดินทาง หรือเดินทางไปต่างประเทศ แพลตฟอร์มของเราช่วยให้คุณสตรีมภาพยนตร์เรื่องโปรดได้ทุกที่ทุกเวลา การชมภาพยนตร์แบบมาราธอนของคุณกำลังรออยู่ เริ่มซื้อและสตรีมเลยตอนนี้!
+      </div>
+      <div class="grid-container flex justify-center p-10 flex-wrap">
+        <!--เล่มที่ 1-->
+        <div class="grid-item pt-4 px-10">
+          <img src="image/1.jpg" width="200px" alt="1" />
+          <p class="text-center pt-3 text-white">0.000025 ETH</p>
+          <div class="px-14">
+            <button
+              onclick="btnChoose('เหมรย',25000000000000)"
+              class="bg-red-700 text-white px-2 py-1 rounded-md"
+            >
+              Buy Now!
+            </button>
+            <div id="characterTime1"></div>
+            <div id="characterBook1"></div>
+            <div id="characterOwner1"></div>
+          </div>
+        </div>
+
+        <!--เล่มที่ 2-->
+        <div class="grid-item pt-4 px-10">
+          <img src="image/2.jpg" width="190px" alt="2" />
+          <p class="text-center pt-3 text-white">0.000021 ETH</p>
+          <div class="px-14">
+            <button
+              onclick="btnChoose('4Kings2',21000000000000)"
+              class="bg-red-700 text-white px-2 py-1 rounded-md"
+            >
+              Buy Now!
+            </button>
+            <div id="characterTime1"></div>
+            <div id="characterBook1"></div>
+            <div id="characterOwner1"></div>
+          </div>
+        </div>
+
+        <!--เล่มที่ 3-->
+        <div class="grid-item pt-4 px-10">
+          <img src="image/3.jpg" width="195px" alt="3" />
+          <p class="text-center pt-3 text-white">0.000023 ETH</p>
+          <div class="px-14">
+            <button
+              onclick="btnChoose('สุขสันต์วันโสด (Low season)',23000000000000)"
+              class="bg-red-700 text-white px-2 py-1 rounded-md"
+            >
+              Buy Now!
+            </button>
+            <div id="characterTime1"></div>
+            <div id="characterBook1"></div>
+            <div id="characterOwner1"></div>
+          </div>
+        </div>
+
+        <!--เล่มที่ 4-->
+        <div class="grid-item pt-4 px-10">
+          <img src="image/4.jpg" width="185px" alt="4" />
+          <p class="text-center pt-3 text-white">0.000027 ETH</p>
+          <div class="px-14">
+            <button
+              onclick="btnChoose('avatar : วิถีแห่งสายน้ำ',27000000000000)"
+              class="bg-red-700 text-white px-2 py-1 rounded-md"
+            >
+              Buy Now!
+            </button>
+            <div id="characterTime1"></div>
+            <div id="characterBook1"></div>
+            <div id="characterOwner1"></div>
+          </div>
+        </div>
+
+        <!--เล่มที่ 5-->
+        <div class="grid-item pt-4 px-10">
+          <img src="image/5.jpg" width="200px" alt="5" />
+          <p class="text-center pt-3 text-white">0.000027 ETH</p>
+          <div class="px-14">
+            <button
+              onclick="btnChoose('โดเรม่อนเดอะมูฟวี่ โนบิตะสํารวจแดนจันทรา',25000000000000)"
+              class="bg-red-700 text-white px-2 py-1 rounded-md"
+            >
+              Buy Now!
+            </button>
+            <div id="characterTime1"></div>
+            <div id="characterBook1"></div>
+            <div id="characterOwner1"></div>
+          </div>
+        </div>
+
+        <!--เล่มที่ 6-->
+        <div class="grid-item pt-4 px-10">
+          <img src="image/6.jpg" width="200px" alt="6" />
+          <p class="text-center pt-3 text-white">0.000027 ETH</p>
+          <div class="px-14">
+            <button
+              onclick="btnChoose('Harry Potter and the Sorcerer',27000000000000)"
+              class="bg-red-700 text-white px-2 py-1 rounded-md"
+            >
+              Buy Now!
+            </button>
+            <div id="characterTime1"></div>
+            <div id="characterBook1"></div>
+            <div id="characterOwner1"></div>
+          </div>
+        </div>
+
+        <!--เล่มที่ 7-->
+        <div class="grid-item pt-4 px-10">
+          <img src="image/7.jpg" width="197px" alt="7" />
+          <p class="text-center pt-3 text-white">0.000027 ETH</p>
+          <div class="px-14">
+            <button
+              onclick="btnChoose('The Lord of The Rings',24000000000000)"
+              class="bg-red-700 text-white px-2 py-1 rounded-md"
+            >
+              Buy Now!
+            </button>
+            <div id="characterTime1"></div>
+            <div id="characterBook1"></div>
+            <div id="characterOwner1"></div>
+          </div>
+        </div>
+
+        <!--เล่มที่ 8-->
+        <div class="grid-item pt-4 px-10">
+          <img src="image/8.jpg" width="196px" alt="8" />
+          <p class="text-center pt-3 text-white">0.000027 ETH</p>
+          <div class="px-14">
+            <button
+              onclick="btnChoose('forex1guardians of the galaxy',21000000000000)"
+              class="bg-red-700 text-white px-2 py-1 rounded-md"
+            >
+              Buy Now!
+            </button>
+            <div id="characterTime1"></div>
+            <div id="characterBook1"></div>
+            <div id="characterOwner1"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full p-4 bg-black">
+      <div
+        class="w-64 mx-auto pt-2 border-b-2 border-red-500 text-center text-2xl text-white font-semibold"
+      >
+      ซีรีย์ยอดฮิตปี 2024
+      </div>
+      <div class=" pt-5 text-center text-white font-family:'Courier New' font-size:10px">ดำดิ่งสู่ดราม่าด้วยซีรีส์ออนไลน์ที่น่าติดตามของเรา ตั้งแต่มหากาพย์มหากาพย์ไปจนถึงการศึกษาตัวละครอย่างใกล้ชิด 
+        แพลตฟอร์มของเรานำเสนอเรื่องราวที่หลากหลายที่จะทำให้คุณติดหนึบกับหน้าจอ เตรียมตัวให้พร้อมสำหรับการพลิกผัน และช่วงเวลาที่น่าจดจำที่จะทำให้คุณแทบหยุดหายใจ!</div>
+      <div class="grid-container flex justify-center p-10 flex-wrap">
+        <!--เรื่องที่ 1-->
+        <div class="grid-item pt-4 px-10">
+          <img src="image/a.jpg" width="200px" alt="a" />
+          <p class="text-center pt-3 text-white">0.000025 ETH</p>
+          <div class="px-12">
+            <button
+              onclick="btnChoose('บริดเจอร์ตัน วังวนรัก เกมไฮโซ',25000000000000)"
+              class="bg-red-700 text-white px-2 py-1 rounded-md"
+            >
+              Buy Now!
+            </button>
+            <div id="characterTime1"></div>
+            <div id="characterBook1"></div>
+            <div id="characterOwner1"></div>
+          </div>
+        </div>
+
+        <!--เรื่องที่ 2-->
+        <div class="grid-item pt-4 px-10">
+          <img src="image/b.jpg" width="212px" alt="b" />
+          <p class="text-center pt-3 text-white">0.000021 ETH</p>
+          <div class="px-12">
+            <button
+              onclick="btnChoose('รักผ่านหน้าต่าง through my window',21000000000000)"
+              class="bg-red-700 text-white px-2 py-1 rounded-md"
+            >
+              Buy Now!
+            </button>
+            <div id="characterTime1"></div>
+            <div id="characterBook1"></div>
+            <div id="characterOwner1"></div>
+          </div>
+        </div>
+
+        <!--เรื่องที่ 3-->
+        <div class="grid-item pt-4 px-10">
+          <img src="image/c.jpg" width="197px" alt="c" />
+          <p class="text-center pt-3 text-white">0.000023 ETH</p>
+          <div class="px-12">
+            <button
+              onclick="btnChoose('emily in paris poster',23000000000000)"
+              class="bg-red-700 text-white px-2 py-1 rounded-md"
+            >
+              Buy Now!
+            </button>
+            <div id="characterTime1"></div>
+            <div id="characterBook1"></div>
+            <div id="characterOwner1"></div>
+          </div>
+        </div>
+
+        <!--เรื่องที่ 4-->
+        <div class="grid-item pt-4 px-10">
+          <img src="image/d.jpg" width="174px" alt="d" />
+          <p class="text-center pt-3 text-white">0.000027 ETH</p>
+          <div class="px-12">
+            <button
+              onclick="btnChoose('เททั้งใจให้เลขาคิม What is Wrong with Secretary Kim',27000000000000)"
+              class="bg-red-700 text-white px-2 py-1 rounded-md"
+            >
+              Buy Now!
+            </button>
+            <div id="characterTime1"></div>
+            <div id="characterBook1"></div>
+            <div id="characterOwner1"></div>
+          </div>
+        </div>
+
+        <!--เรื่องที่ 5-->
+        <div class="grid-item pt-4 px-10">
+          <img src="image/e.jpg" width="200px" alt="e" />
+          <p class="text-center pt-3 text-white">0.000025 ETH</p>
+          <div class="px-12">
+            <button
+              onclick="btnChoose('brainWednesday Addams',22000000000000)"
+              class="bg-red-700 text-white px-2 py-1 rounded-md"
+            >
+              Buy Now!
+            </button>
+            <div id="characterTime1"></div>
+            <div id="characterBook1"></div>
+            <div id="characterOwner1"></div>
+          </div>
+        </div>
+
+        <!--เรื่องที่ 6-->
+        <div class="grid-item pt-4 px-10">
+          <img src="image/f.jpg" width="200px" alt="f" />
+          <p class="text-center pt-3 text-white">0.000025 ETH</p>
+          <div class="px-12">
+            <button
+              onclick="btnChoose('descendants of the sun',29000000000000)"
+              class="bg-red-700 text-white px-2 py-1 rounded-md"
+            >
+              Buy Now!
+            </button>
+            <div id="characterTime1"></div>
+            <div id="characterBook1"></div>
+            <div id="characterOwner1"></div>
+          </div>
+        </div>
+
+        <!--เรื่องที่ 7-->
+        <div class="grid-item pt-4 px-10">
+          <img src="image/g.jpg" width="200px" alt="g" />
+          <p class="text-center pt-3 text-white">0.000025 ETH</p>
+          <div class="px-12">
+            <button
+              onclick="btnChoose('crash landing on you',27000000000000)"
+              class="bg-red-700 text-white px-2 py-1 rounded-md"
+            >
+              Buy Now!
+            </button>
+            <div id="characterTime1"></div>
+            <div id="characterBook1"></div>
+            <div id="characterOwner1"></div>
+          </div>
+        </div>
+
+        <!--เรื่องที่ 8-->
+        <div class="grid-item pt-4 px-10">
+          <img src="image/h.jpg" width="160px" alt="h" />
+          <p class="text-center pt-3 text-white">0.000025 ETH</p>
+          <div class="px-12">
+            <button
+              onclick="btnChoose('Elite',28000000000000)"
+              class="bg-red-700 text-white px-2 py-1 rounded-md"
+            >
+              Buy Now!
+            </button>
+            <div id="characterTime1"></div>
+            <div id="characterBook1"></div>
+            <div id="characterOwner1"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="w-full p-4 bg-black">
+      <div
+        class="w-64 mx-auto pt-2 border-b-2 border-red-500 text-center text-2xl text-white font-semibold"
+      >
+        รายชื่อเจ้าของหนังสือ
+      </div>
+      <div class="grid-container flex justify-center p-10 flex-wrap">
+        <table class="min-w-full bg-gray-300 ">
+          <thead>
+            <tr>
+              <th class="py-2 px-4 border-b">Time</th>
+              <th class="py-2 px-4 border-b">Movies/Series</th>
+              <th class="py-2 px-4 border-b">Owner</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="py-2 px-4 border-b" id="time1"></td>
+              <td class="py-2 px-4 border-b" id="book1"></td>
+              <td class="py-2 px-4 border-b" id="owner1"></td>
+            </tr>
+
+            <tr>
+              <td class="py-2 px-4 border-b" id="time2"></td>
+              <td class="py-2 px-4 border-b" id="book2"></td>
+              <td class="py-2 px-4 border-b" id="owner2"></td>
+            </tr>
+
+            <tr>
+              <td class="py-2 px-4 border-b" id="time3"></td>
+              <td class="py-2 px-4 border-b" id="book3"></td>
+              <td class="py-2 px-4 border-b" id="owner3"></td>
+            </tr>
+
+            <tr>
+              <td class="py-2 px-4 border-b" id="time4"></td>
+              <td class="py-2 px-4 border-b" id="book4"></td>
+              <td class="py-2 px-4 border-b" id="owner4"></td>
+            </tr>
+
+            <tr>
+              <td class="py-2 px-4 border-b" id="time5"></td>
+              <td class="py-2 px-4 border-b" id="book5"></td>
+              <td class="py-2 px-4 border-b" id="owner5"></td>
+            </tr>
+
+            <tr>
+              <td class="py-2 px-4 border-b" id="time6"></td>
+              <td class="py-2 px-4 border-b" id="book6"></td>
+              <td class="py-2 px-4 border-b" id="owner6"></td>
+            </tr>
+
+            <tr>
+              <td class="py-2 px-4 border-b" id="time7"></td>
+              <td class="py-2 px-4 border-b" id="book7"></td>
+              <td class="py-2 px-4 border-b" id="owner7"></td>
+            </tr>
+
+            <tr>
+              <td class="py-2 px-4 border-b" id="time8"></td>
+              <td class="py-2 px-4 border-b" id="book8"></td>
+              <td class="py-2 px-4 border-b" id="owner8"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+  </body>
+  <!-- JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+
+  <script>
+    async function loadWeb3() {
+      if (window.ethereum) {
+        window.web3 = new Web3(window.ethereum);
+        window.ethereum.enable();
+      }
+    }
+
+    let currentAccount = null;
+    window.ethereum
+      .request({ method: "eth_accounts" })
+      .then(handleAccountsChanged)
+      .catch((err) => {
+        console.error(err);
+      });
+
+    window.ethereum.on("accountsChanged", handleAccountsChanged);
+
+    function handleAccountsChanged(accounts) {
+      if (accounts.length === 0) {
+        console.log("Please connect to MetaMask.");
+      } else if (accounts[0] !== currentAccount) {
+        currentAccount = accounts[0];
+      }
+    }
+
+    let abi = 
+    [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "book",
+          "type": "string"
+        }
+      ],
+      "name": "Add",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        }
+      ],
+      "name": "buy",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    }
+  ];
+
+    async function loadContract() {
+      return await new window.web3.eth.Contract(
+        abi,
+        "0x01a17aC7DADA1834e631086Cf121Ecaa148bB7ec"
+      );
+    }
+
+    async function load() {
+      await loadWeb3();
+      window.contract = await loadContract();
+      updateStatus("Ready!");
+    }
+
+    function updateStatus(status) {
+      const statusEl = document.getElementById("status");
+      statusEl.innerHTML = status;
+      console.log(status);
+    }
+
+    var i = 0;
+
+    function formatTime(date) {
+      const options = { hour: "2-digit", minute: "2-digit" };
+      return new Date(date).toLocaleTimeString("en-US", options);
+    }
+
+    async function btnChoose(name, eth) {
+      console.log(currentAccount);
+      const currentTime = formatTime(new Date());
+      $("#result").html("ร้องขอการอนุมัติการทำรายการ..."); // แสดงข้อความระหว่างการร้องขอการอนุมัติ
+    
+      try {
+        const accounts = await window.ethereum.request({ method: "eth_requestAccounts" }); // ขออนุญาตเข้าถึงบัญชี MetaMask
+        const from = accounts[0];
+        console.log("ใช้บัญชี:", from);
+    
+        const result = await window.contract.methods.buy(name).send({ from, value: eth }); // ส่งการทำรายการไปยังเครือข่าย Ethereum
+        console.log("ผลการทำรายการ:", result);
+    
+        // หากสำเร็จ
+        $("#result").html(
+          "ทำรายการสำเร็จ! <br/> ชื่อ: " +
+            name +
+            "<br/> เวลา: " +
+            currentTime +
+            "<br/> เจ้าของ: " +
+            currentAccount
+        );
+    
+        // หากต้องการอัปเดตตารางข้อมูล
+        // ค้นหาแถวที่พร้อมใช้งานในตาราง
+        var row = 1;
+        while ($("#time" + row).html() !== "") {
+          row++;
+        }
+    
+        // อัปเดตข้อมูลในตาราง
+        $("#time" + row).html(currentTime);
+        $("#book" + row).html(name);
+        $("#owner" + row).html(currentAccount);
+      } catch (error) {
+        console.error(error);
+        $("#result").html("ข้อผิดพลาด: " + error.message);
+      }
+    }
+    
+    function timenow() {
+      var s = new Date().toLocaleTimeString("en-US");
+      console.log(s);
+      return s;
+    }
+    load();
+  </script>
+  <div id="result"></div>
+</html>
